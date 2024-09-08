@@ -10,8 +10,10 @@ import {
 } from '@repo/ui/components/ui/dropdown-menu';
 import Logo from '../assets/images/GQ.png';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Header: React.FC = () => {
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -111,7 +113,7 @@ const Header: React.FC = () => {
 
         {/* Profile Icon Placeholder */}
         <div className="px-4">
-          <div className="h-10 w-10 rounded-full border border-white cursor-pointer"></div>
+          <div className="h-10 w-10 rounded-full border border-white cursor-pointer" onClick={() => router.push('/login')}></div>
         </div>
       </div>
     </header>

@@ -96,7 +96,7 @@ const ProductPage = () => {
 					<div className="w-full max-w-4xl mb-6">
 						<button
 							className="flex items-center text-sm text-neutral-400 hover:text-neutral-100 transition"
-							onClick={() => router.back()}
+							onClick={() => router.push('/products')}
 						>
 							<ChevronLeft className="mr-2" />
 						</button>

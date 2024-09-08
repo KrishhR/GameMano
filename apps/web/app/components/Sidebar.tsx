@@ -19,11 +19,11 @@ const Sidebar: React.FC = () => {
   const handleMouseLeave = () => setIsOpen(false); // Close when not hovered
 
   const logoutUser = () => {
-    const isUserExist = !!localStorage.getItem('user');
+    const isUserExist = !!localStorage.getItem('username');
     if (isUserExist) {
+      alert('User Logged Out');
       logout();
       setIsOpen(false);
-      alert('User Logged Out');
     } else alert('Kindly Log In first!');
   };
 
