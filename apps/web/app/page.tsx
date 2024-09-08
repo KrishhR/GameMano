@@ -1,47 +1,32 @@
 /* eslint-disable no-unused-vars */
 'use client';
 
-import React, {useEffect, useState} from 'react';
-import {fetchAllProducts} from './services/productService';
-import {Product} from './types';
+import React from 'react';
 import './styles/style.css';
 import Banner from './components/Banner';
-import TrendingProducts from './components/TrendingProducts';
 import Sidebar from './components/Sidebar';
 import {usePathname} from 'next/navigation';
 import Advertisment from './components/Advertisment';
 
 export default function HomePage() {
   const pathname = usePathname();
-  const [products, setProducts] = useState<Product[]>([]);
-  const [error, setError] = useState('');
 
+  // slides array for banner images
   const slides = [
     'https://res.cloudinary.com/epiphanystudios/image/upload/v1474325161/Billboard_-_AnalyticsBanner_s0vsiv.jpg',
     'https://res.cloudinary.com/epiphanystudios/image/upload/v1474389520/Billboard_-_HipsterBanner_rzyv5r.jpg',
     'https://res.cloudinary.com/epiphanystudios/image/upload/v1474389522/Billboard_-_ProductsBanner_kfucs3.jpg',
   ];
 
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const data = await fetchAllProducts();
-        setProducts(data.products);
-      } catch (err) {
-        setError('Failed to fetch products');
-      }
-    };
-
-    getProducts();
-  }, []);
-
   return (
     <div className="flex">
+      {/* sidebar */}
       {pathname === '/' ? <Sidebar /> : <></>}
       <div className="p-4 flex flex-col gap-8">
+        {/* Banner Componant */}
         <Banner slides={slides} />
 
-        {/* <TrendingProducts products={products} /> */}
+        {/* Advertisments */}
         <Advertisment
           gameDetails={{
             title: 'Evolution',

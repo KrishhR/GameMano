@@ -1,13 +1,13 @@
 .border-right {
-    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .topbar-bg {
-    background: var(--background-start-rgb);
+  background: rgba(33, 31, 24, 1);
 }
 
 .bg-dark-yellow {
-    background-color: rgb(59, 52, 41);
+  background-color: rgb(59, 52, 41);
 }
 
 .loader {
@@ -27,12 +27,12 @@
   border-radius: 10px;
 }
 
-.rounded-50 {
+.rounded-25 {
   border-radius: 25px;
 }
 
 .custom-product-badge {
-  left:-50px;
+  left: -50px;
   top: 55px;
 }
 
@@ -66,10 +66,36 @@
   border-radius: 25px;
 }
 
+.bg-overshadow {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-footer {
+  background-color: #13100A;
+}
+
+.border-sidebar {
+  border-right: 1px solid #736E69;
+  border-bottom: 1px solid #736E69;
+}
+
+.border-bottom-gray {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+}
+
+.bg-sidebar {
+  background-color: rgba(61, 53, 42, 0.95);
+}
+
+.border-product {
+  border: 1px solid #736E69;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

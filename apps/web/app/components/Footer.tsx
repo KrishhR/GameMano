@@ -1,11 +1,9 @@
 import {Twitter, Facebook, Instagram} from 'lucide-react';
+import '../styles/style.css';
 
 export default function Footer() {
   return (
-    <footer
-      className=" text-white bottom-0 z-50"
-      style={{backgroundColor: '#13100A'}}
-    >
+    <footer className="text-white bottom-0 z-50 bg-footer">
       <div className=" py-4 px-6 flex flex-col gap-6 md:flex flex-row justify-between items-center border-t border-gray-700">
         {/* Links */}
         <div className="flex flex-col md:flex-row gap-6">

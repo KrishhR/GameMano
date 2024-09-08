@@ -1,4 +1,3 @@
-// packages/ui/Header.tsx
 import React, {useState} from 'react';
 import {Bell, ShoppingBag, Search, Menu} from 'lucide-react';
 import {
@@ -11,19 +10,13 @@ import {
 } from '@repo/ui/components/ui/dropdown-menu';
 import Logo from '../assets/images/GQ.png';
 import Image from 'next/image';
-// import { usePathname } from 'next/navigation';
 
 const Header: React.FC = () => {
-  // const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header
-      className="flex flex-col lg:flex-row items-center justify-between py-4 px-4 topbar-bg text-white sticky top-0 z-50"
-      style={{backgroundColor: 'rgba(33,31,24,1)'}}
-    >
+    <header className="flex flex-col lg:flex-row items-center justify-between py-4 px-4 topbar-bg text-white sticky top-0 z-50">
       {/* Mobile Menu Toggle */}
       <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
         <div className="flex justify-between items-center">
@@ -93,10 +86,7 @@ const Header: React.FC = () => {
                 </div>
               </div>
             </DropdownMenuTrigger>
-            <DropdownMenuContent
-              className="bg-black text-white  p-3 border-0"
-              style={{borderRadius: '10px'}}
-            >
+            <DropdownMenuContent className="bg-black text-white  p-3 border-0 rounded-10">
               <DropdownMenuLabel>Notifications(3)</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="px-4 py-2 cursor-pointer bg-hover-orange rounded-md">

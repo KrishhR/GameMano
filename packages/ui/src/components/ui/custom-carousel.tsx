@@ -11,7 +11,7 @@ interface CarouselProps {
   slideStructure: (slide: any, index: number) => React.ReactNode;
   interval?: number;
   containerClassName?: string;
-  // slideClassName?: string;
+  dots?: boolean;
   dotClassName?: string;
   activeDotClassName?: string;
   customStyle?: ObjectI;
@@ -21,6 +21,7 @@ const Carousel: React.FC<CarouselProps> = ({
   slides,
   slideStructure,
   interval = 3000,
+  dots = true,
   containerClassName = 'relative w-full',
   dotClassName = 'w-3 h-3 rounded-full transition-colors',
   activeDotClassName = 'bg-yellow-300',
@@ -64,22 +65,26 @@ const Carousel: React.FC<CarouselProps> = ({
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center mt-4 space-x-2">
-        {slides.map((_, index) => (
-          <div
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`${dotClassName} ${
-              index === currentSlide ? activeDotClassName : 'bg-gray-300'
-            }`}
-            style={{
-              backgroundColor: `${
-                currentSlide === index ? '#FDF3BC' : 'white'
-              }`,
-            }}
-          ></div>
-        ))}
-      </div>
+      {dots ? (
+        <div className="flex justify-center mt-4 space-x-2">
+          {slides.map((_, index) => (
+            <div
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`${dotClassName} ${
+                index === currentSlide ? activeDotClassName : 'bg-gray-300'
+              }`}
+              style={{
+                backgroundColor: `${
+                  currentSlide === index ? '#FDF3BC' : 'white'
+                }`,
+              }}
+            ></div>
+          ))}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

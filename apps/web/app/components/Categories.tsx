@@ -33,9 +33,9 @@ const Categories: React.FC<CategoriesProps> = ({
             key={`category.slug-${index}`}
             className="flex items-center space-x-3 cursor-pointer"
             role="button"
-            onClick={() => handleCategoryChange(category.slug)} // Use onClick for better user experience
+            onClick={() => handleCategoryChange(category.slug)}
             tabIndex={0}
-            aria-pressed={selectedCategory === category.slug} // Improve accessibility
+            aria-pressed={selectedCategory === category.slug}
           >
             <Checkbox
               id={category.slug}

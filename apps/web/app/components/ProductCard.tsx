@@ -1,4 +1,3 @@
-// packages/ui/components/ProductCard.tsx
 import React from 'react';
 import {
   Card,
@@ -13,7 +12,6 @@ import {StarFilledIcon, StarIcon} from '@radix-ui/react-icons';
 import {Button} from '@repo/ui/components/ui/button';
 import NoImage from '../assets/images/noImage.png';
 import {useRouter} from 'next/navigation';
-// import LazyLoad from 'react-lazyload';
 
 const ProductCard: React.FC<{product: Product; customClass?: string}> = ({
   product,
@@ -24,20 +22,15 @@ const ProductCard: React.FC<{product: Product; customClass?: string}> = ({
   const ratings = (rating: number) => {
     return (
       <div className="flex space-x-1">
-        {[...Array(5)].map(
-          (
-            _,
-            index, //Loop to generate 5 stars
-          ) => (
-            <span key={index}>
-              {index < Math.round(+rating) ? (
-                <StarFilledIcon className="bg-star" />
-              ) : (
-                <StarIcon className="bg-star" />
-              )}
-            </span>
-          ),
-        )}
+        {[...Array(5)].map((_, index) => (
+          <span key={index}>
+            {index < Math.round(+rating) ? (
+              <StarFilledIcon className="bg-star" />
+            ) : (
+              <StarIcon className="bg-star" />
+            )}
+          </span>
+        ))}
       </div>
     );
   };

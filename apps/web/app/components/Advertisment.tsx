@@ -10,10 +10,7 @@ interface gameDetailsI {
 
 const Advertisment: React.FC<{gameDetails: gameDetailsI}> = ({gameDetails}) => {
   return (
-    <div
-      className="h-screen flex items-center justify-end p-10 mb-5"
-      style={{backgroundColor: 'rgba(0,0,0,0.5)'}}
-    >
+    <div className="h-screen flex items-center justify-end p-10 mb-5 bg-overshadow">
       <div className="max-w-4xl w-full p-10 bg-transparent text-white rounded-lg shadow-lg relative">
         <div className="absolute top-4 right-4 text-right">
           <div className="flex items-center justify-center">

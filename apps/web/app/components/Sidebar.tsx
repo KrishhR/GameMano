@@ -15,33 +15,29 @@ import BgLogo from '../assets/images/GameQuest.png';
 const Sidebar: React.FC = () => {
   const {logout} = useAuth();
   const [isOpen, setIsOpen] = useState(false); // Track sidebar state (open/close)
-
   const handleMouseEnter = () => setIsOpen(true); // Open on hover
   const handleMouseLeave = () => setIsOpen(false); // Close when not hovered
 
   const logoutUser = () => {
     const isUserExist = !!localStorage.getItem('user');
-    if (isUserExist) logout();
+    if (isUserExist) {
+      logout();
+      setIsOpen(false);
+      alert('User Logged Out');
+    } else alert('Kindly Log In first!');
   };
 
   return (
     <>
       {/* Side bar with only icons */}
       <aside
-        className={`relative bg-transparent h-auto text-white transition-all duration-300 ease-in-out w-auto`}
+        className={`relative bg-transparent h-auto text-white transition-all duration-300 ease-in-out w-auto border-sidebar`}
         onMouseEnter={handleMouseEnter}
-        style={{
-          borderRight: '1px solid #736E69',
-          borderBottom: '1px solid #736E69',
-        }}
       >
         <div className="flex flex-col h-full">
           {/* SIDEBAR MENU */}
           <div className="flex flex-col h-full py-4">
-            <ul
-              className="space-y-4 mt-6 pb-6 transition-all duration-300 ease-in-out px-4"
-              style={{borderBottom: '1px solid rgba(255, 255, 255, 0.3)'}}
-            >
+            <ul className="space-y-4 mt-6 pb-6 transition-all duration-300 ease-in-out px-4 border-bottom-gray">
               <li>
                 <a
                   className="p-4 flex items-center hover:text-gray-400 transition-colors"
@@ -112,8 +108,7 @@ const Sidebar: React.FC = () => {
       {/* Side bar whose initial width will be 0px, and on hover expands. */}
       <div
         onMouseLeave={handleMouseLeave}
-        className={`fixed top-0 left-0 z-60 h-full transition-all duration-500 ease-in-out ${isOpen ? 'w-64' : 'w-0'}  text-white overflow-hidden z-50`}
-        style={{backgroundColor: 'rgba(61, 53, 42, 0.95)'}}
+        className={`bg-sidebar fixed top-0 left-0 z-60 h-full transition-all duration-500 ease-in-out ${isOpen ? 'w-64' : 'w-0'}  text-white overflow-hidden z-50`}
       >
         <div className="flex flex-col h-full">
           {/* Logo Section */}
@@ -129,10 +124,7 @@ const Sidebar: React.FC = () => {
 
           {/* Menu Items */}
           <div className="flex flex-col h-full py-4">
-            <ul
-              className="space-y-4 mt-6 pb-6 px-4 transition-all duration-300 ease-in-out"
-              style={{borderBottom: '1px solid rgba(255, 255, 255, 0.3)'}}
-            >
+            <ul className="border-bottom-gray space-y-4 mt-6 pb-6 px-4 transition-all duration-300 ease-in-out">
               <li>
                 <a
                   className="p-4 flex items-center hover:text-gray-400 transition-colors"

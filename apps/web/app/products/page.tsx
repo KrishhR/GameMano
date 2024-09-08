@@ -29,7 +29,7 @@ const Page = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState<boolean>(true); // State to manage loading
   const [productsLoading, setProductsLoading] = useState<boolean>(true); // State to manage loading in all products section
-  const [selectedCategory, setSelectedCategory] = useState<string>('default');
+  const [selectedCategory, setSelectedCategory] = useState<string>('default'); // state to store selected category
   const [selectedOption, setSelectedOption] = useState('low-to-high'); // State to store selected option
 
   // Handler function to update selected option
@@ -165,10 +165,7 @@ const Page = () => {
                         <DropdownMenuTrigger className="text-white px-4 py-2 border-2 border-gray-300 rounded-full flex gap-2 items-center">
                           Sort By <ChevronDown color="#ffffff" />
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent
-                          className="bg-dark-brown text-white p-3 border-0"
-                          style={{borderRadius: '10px'}}
-                        >
+                        <DropdownMenuContent className="bg-dark-brown text-white p-3 border-0 rounded-10">
                           <DropdownMenuItem
                             className="px-4 py-2 cursor-pointer bg-hover-orange rounded-md"
                             onSelect={() => handleSelect('low-to-high')}
