@@ -122,7 +122,7 @@ const ProductPage = () => {
 									<Carousel
 										slides={slides}
 										slideStructure={slideStructure}
-										interval={5000}
+										interval={3000}
 										dots={false}
 										containerClassName="relative w-full overflow-hidden"
 									/>
