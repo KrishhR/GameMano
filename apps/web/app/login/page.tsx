@@ -38,7 +38,7 @@ export default function LoginPage() {
         placeholder="Password"
         className="border p-2 w-full mb-2"
       />
-      <Button type="submit" className="w-full">
+      <Button type="submit" className="w-full bg-gray-700">
         Login
       </Button>
     </form>
