@@ -31,7 +31,7 @@ const Sidebar: React.FC = () => {
     <>
       {/* Side bar with only icons */}
       <aside
-        className={`relative bg-transparent h-auto text-white transition-all duration-300 ease-in-out w-auto border-sidebar`}
+        className={`relative bg-transparent h-auto text-white transition-all duration-300 ease-in-out w-full sm:w-auto border-sidebar`}
         onMouseEnter={handleMouseEnter}
       >
         <div className="flex flex-col h-full">
@@ -40,7 +40,7 @@ const Sidebar: React.FC = () => {
             <ul className="space-y-4 mt-6 pb-6 transition-all duration-300 ease-in-out px-4 border-bottom-gray">
               <li>
                 <a
-                  className="p-4 flex items-center hover:text-gray-400 transition-colors"
+                  className="p-2 sm:p-4 flex items-center hover:text-gray-400 transition-colors"
                   href="/"
                 >
                   <Home />
@@ -48,7 +48,7 @@ const Sidebar: React.FC = () => {
               </li>
               <li>
                 <a
-                  className="p-4 flex items-center hover:text-gray-400 transition-colors"
+                  className="p-2 sm:p-4 flex items-center hover:text-gray-400 transition-colors"
                   href="javascript:void(0);"
                 >
                   <div className="relative">
@@ -59,7 +59,7 @@ const Sidebar: React.FC = () => {
               </li>
               <li>
                 <a
-                  className="p-4 flex items-center hover:text-gray-400 transition-colors"
+                  className="p-2 sm:p-4 flex items-center hover:text-gray-400 transition-colors"
                   href="/products"
                 >
                   <Store />
@@ -67,7 +67,7 @@ const Sidebar: React.FC = () => {
               </li>
               <li>
                 <a
-                  className="p-4 flex items-center hover:text-gray-400 transition-colors"
+                  className="p-2 sm:p-4 flex items-center hover:text-gray-400 transition-colors"
                   href="javascript:void(0);"
                 >
                   <CreditCard />
@@ -75,7 +75,7 @@ const Sidebar: React.FC = () => {
               </li>
               <li>
                 <a
-                  className="p-4 flex items-center hover:text-gray-400 transition-colors"
+                  className="p-2 sm:p-4 flex items-center hover:text-gray-400 transition-colors"
                   href="javascript:void(0);"
                 >
                   <Trophy />
@@ -86,7 +86,7 @@ const Sidebar: React.FC = () => {
             <ul className="space-y-4 mt-6 pb-6 transition-all duration-300 ease-in-out px-4">
               <li>
                 <a
-                  className="p-4 flex items-center hover:text-gray-400 transition-colors"
+                  className="p-2 sm:p-4 flex items-center hover:text-gray-400 transition-colors"
                   href="javascript:void(0);"
                 >
                   <Settings />
@@ -94,7 +94,7 @@ const Sidebar: React.FC = () => {
               </li>
               <li>
                 <a
-                  className="p-4 flex items-center hover:text-gray-400 transition-colors"
+                  className="p-2 sm:p-4 flex items-center hover:text-gray-400 transition-colors"
                   onClick={() => logoutUser()}
                 >
                   <LogOut />
